@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../cmake/Modules")
 
 project(cdpSimpleQuicksort LANGUAGES C CXX CUDA)
 
@@ -9,10 +9,17 @@ find_package(CUDAToolkit REQUIRED)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 if(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
-    set(CMAKE_CUDA_ARCHITECTURES 61 70 75 80 86 87 90)
+    # Need to differentiate Tegra_aarch64 and other aarch64 systems(sbsa_aarch64) as they have different CUDA_ARCHITECTURES list
+    if(${BUILD_TEGRA})
+        set(CMAKE_CUDA_ARCHITECTURES 72 87 101)
+    else()
+        set(CMAKE_CUDA_ARCHITECTURES 61 70 75 80 86 90)
+    endif()
 else()
-    set(CMAKE_CUDA_ARCHITECTURES 50 52 60 61 70 75 80 86 89 90)
+    set(CMAKE_CUDA_ARCHITECTURES 50 52 60 61 70 75 80 86 89 90 100 101 120)
 endif()
+
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Wno-deprecated-gpu-targets")
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     # set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -G")  # enable cuda-gdb (expensive)

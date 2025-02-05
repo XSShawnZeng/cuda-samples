@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../../cmake/Modules")
 
 project(simpleGLES LANGUAGES C CXX CUDA)
 
@@ -9,6 +9,8 @@ find_package(CUDAToolkit REQUIRED)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 set(CMAKE_CUDA_ARCHITECTURES 53 61 70 72 75 80 86 87 90)
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Wno-deprecated-gpu-targets")
+
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     # set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -G")  # enable cuda-gdb (expensive)
 endif()
@@ -45,6 +47,15 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
                     ${X11_LIBRARIES}
                     ${OPENGL_LIBRARIES}
                 )
+
+                # Copy the .glsl files to the output directory
+                add_custom_command(TARGET simpleGLES POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                    ${CMAKE_CURRENT_SOURCE_DIR}/mesh.frag.glsl
+                    ${CMAKE_CURRENT_SOURCE_DIR}/mesh.vert.glsl
+                    ${CMAKE_CURRENT_BINARY_DIR}
+                )
+
             else()
                 message(STATUS "X11 libraries not found - will not build sample 'simpleGLES'")
             endif()

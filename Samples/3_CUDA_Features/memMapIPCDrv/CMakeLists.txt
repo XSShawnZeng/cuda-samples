@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../cmake/Modules")
 
 project(memMapIPCDrv LANGUAGES C CXX CUDA)
 
@@ -8,7 +8,8 @@ find_package(CUDAToolkit REQUIRED)
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-set(CMAKE_CUDA_ARCHITECTURES 50 52 60 61 70 75 80 86 89 90)
+set(CMAKE_CUDA_ARCHITECTURES 50 52 60 61 70 75 80 86 89 90 100 101 120)
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Wno-deprecated-gpu-targets")
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     # set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -G")  # enable cuda-gdb (expensive)
 endif()
@@ -39,7 +40,7 @@ set(CUDA_KERNEL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/memMapIpc_kernel.cu")
 
 add_custom_command(
     OUTPUT ${CUDA_PTX_FILE}
-    COMMAND ${CMAKE_CUDA_COMPILER} ${INCLUDES} ${ALL_CCFLAGS} ${GENCODE_FLAGS} -o ${CUDA_PTX_FILE} -ptx ${CUDA_KERNEL_SOURCE}
+    COMMAND ${CMAKE_CUDA_COMPILER} ${INCLUDES} ${ALL_CCFLAGS} -Wno-deprecated-gpu-targets  ${GENCODE_FLAGS} -o ${CUDA_PTX_FILE} -ptx ${CUDA_KERNEL_SOURCE}
     DEPENDS ${CUDA_KERNEL_SOURCE}
     COMMENT "Building CUDA PTX: ${CUDA_PTX_FILE}"
 )
@@ -48,5 +49,5 @@ add_custom_command(
 # Create a dummy target for fatbin generation
 add_custom_target(generate_memMapIpc_ptx ALL DEPENDS ${CUDA_PTX_FILE})
 
-# Ensure matrixMulDrv depends on the fatbin
-add_dependencies(matrixMulDrv generate_memMapIpc_ptx)
+# Ensure memMapIPCDrv depends on the fatbin
+add_dependencies(memMapIPCDrv generate_memMapIpc_ptx)
