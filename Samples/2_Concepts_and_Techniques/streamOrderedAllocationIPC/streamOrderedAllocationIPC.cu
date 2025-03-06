@@ -270,19 +270,16 @@ static void parentProcess(char *app) {
       printf("Device %d does not support cuda memory pools, skipping...\n", i);
       continue;
     }
-    int deviceSupportsIpcHandle = 0;
-#if defined(__linux__)
-    checkCudaErrors(cuDeviceGetAttribute(
-        &deviceSupportsIpcHandle,
-        CU_DEVICE_ATTRIBUTE_HANDLE_TYPE_POSIX_FILE_DESCRIPTOR_SUPPORTED,
-        devices[i]));
-#else
-    cuDeviceGetAttribute(&deviceSupportsIpcHandle,
-                         CU_DEVICE_ATTRIBUTE_HANDLE_TYPE_WIN32_HANDLE_SUPPORTED,
-                         devices[i]);
-#endif
-
-    if (!deviceSupportsIpcHandle) {
+    //Check device support ipc handle or not by CU_DEVICE_ATTRIBUTE_MEMPOOL_SUPPORTED_HANDLE_TYPES
+    int supportedHandleTypes;
+    checkCudaErrors(cuDeviceGetAttribute(&supportedHandleTypes,
+                                         CU_DEVICE_ATTRIBUTE_MEMPOOL_SUPPORTED_HANDLE_TYPES,
+                                         devices[i]));
+    if (supportedHandleTypes & CU_MEM_HANDLE_TYPE_POSIX_FILE_DESCRIPTOR) {
+      printf("Device %d support POSIX file descriptor IPC handles\n", i);
+    } else if (supportedHandleTypes & CU_MEM_HANDLE_TYPE_WIN32) {
+      printf("Device %d support Win32 IPC handles\n", i);
+    } else {
       printf("Device %d does not support CUDA IPC Handle, skipping...\n", i);
       continue;
     }
@@ -430,7 +427,7 @@ static void parentProcess(char *app) {
 int main(int argc, char **argv) {
 #if defined(__arm__) || defined(__aarch64__) || defined(WIN32) || \
     defined(_WIN32) || defined(WIN64) || defined(_WIN64)
-  printf("Not supported on ARM\n");
+  printf("Not supported on ARM and Windows\n");
   return EXIT_WAIVED;
 #else
   if (argc == 1) {
@@ -441,3 +438,4 @@ int main(int argc, char **argv) {
   return EXIT_SUCCESS;
 #endif
 }
+
