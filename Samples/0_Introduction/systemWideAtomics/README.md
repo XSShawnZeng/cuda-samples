@@ -26,7 +26,7 @@ x86_64, ppc64le
 cudaDeviceSynchronize, cudaMallocManaged, cudaGetDeviceProperties, cudaFree
 
 ## Dependencies needed to build/run
-[UVM](../../../README.md#uvm)
+[UVM](../../../README.md#unified-virtual-memory)
 
 ## Prerequisites
 

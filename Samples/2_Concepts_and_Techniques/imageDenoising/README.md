@@ -26,8 +26,7 @@ x86_64, armv7l
 cudaGraphicsUnmapResources, cudaMemcpy, cudaMallocArray, cudaFreeArray, cudaFree, cudaGraphicsResourceGetMappedPointer, cudaGraphicsMapResources, cudaDeviceSynchronize, cudaCreateTextureObject, cudaGLRegisterBufferObject, cudaGraphicsUnregisterResource, cudaMalloc, cudaGraphicsGLRegisterBuffer
 
 ## Dependencies needed to build/run
-[X11](../../../README.md#x11), [GL](../../../README.md#gl)
-
+[X11](../../../README.md#x11), [OpenGL](../../../README.md#opengl), [Freeglut](../../../README.md#freeglut), [GLEW](../../../README.md#glew)
 ## Prerequisites
 
 Download and install the [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) for your corresponding platform.

@@ -24,7 +24,7 @@ x86_64, armv7l, aarch64
 cudaMemcpy, cudaStreamDestroy, cudaMemPrefetchAsync, cudaFree, cudaMallocHost, cudaMallocManaged, cudaStreamAttachMemAsync, cudaHostGetDevicePointer, cudaFreeHost, cudaStreamSynchronize, cudaMalloc, cudaMemcpyAsync, cudaStreamCreate, cudaGetDeviceProperties
 
 ## Dependencies needed to build/run
-[UVM](../../../README.md#uvm)
+[UVM](../../../README.md#unified-virtual-memory)
 
 ## Prerequisites
 

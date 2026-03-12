@@ -29,7 +29,7 @@ cuMemCreate, cuMemAddressReserve, cuMemGetAllocationGranularity, cuMemAddressFre
 cudaWaitExternalSemaphoresAsync, cudaImportExternalSemaphore, cudaDeviceGetAttribute, cudaSetDevice, cudaLaunchHostFunc, cudaMallocHost, cudaSignalExternalSemaphoresAsync, cudaFreeHost, cudaMemsetAsync, cudaMemcpyAsync, cudaGetDeviceCount, cudaStreamCreateWithFlags, cudaStreamDestroy, cudaDestroyExternalSemaphore, cudaSignalSemaphore, cudaWaitSemaphore, cudaFree, cudaStreamSynchronize, cudaMalloc, cudaOccupancyMaxActiveBlocksPerMultiprocessor, cudaGetDeviceProperties
 
 ## Dependencies needed to build/run
-[X11](../../../README.md#x11), [VULKAN](../../../README.md#vulkan)
+[X11](../../../README.md#x11), [VULKAN](../../../README.md#vulkan), [GLFW](../../../README.md#glfw)
 
 ## Prerequisites
 

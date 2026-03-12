@@ -26,7 +26,7 @@ x86_64, aarch64
 cudaMalloc, cudaGetLastError, cudaMemcpy, cudaFree
 
 ## Dependencies needed to build/run
-[MPI](../../../README.md#mpi)
+[MPI](../../../README.md#message-passing-interface)
 
 ## Prerequisites
 

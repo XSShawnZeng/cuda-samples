@@ -604,6 +604,11 @@ NVJPEG library provides high-performance, GPU accelerated JPEG decoding function
 
 NVRTC (CUDA RunTime Compilation) is a runtime compilation library for CUDA C++.
 
+#### NVJITLINK
+
+NVJITLINK is a CUDA runtime library that links multiple GPU device code objects at runtime and enables just‑in‑time link‑time optimization (JIT LTO).
+It can take device code from tools such as NVCC and NVRTC, link and optimize it on the fly, and produce the final GPU binary.For more details, see: https://docs.nvidia.com/cuda/nvjitlink/index.html
+
 #### Stream Priorities
 
 Stream Priorities allows the creation of streams with specified priorities. Stream Priorities is only available on GPUs with SM architecture of 3.5 or above.

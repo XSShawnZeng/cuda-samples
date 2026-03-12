@@ -24,7 +24,7 @@ x86_64, armv7l
 cudaStreamCreateWithFlags, cudaMemcpy, cudaMemcpyAsync, cudaFree, cudaGetErrorString, cudaGetLastError, cudaPeekAtLastError, cudaDeviceSynchronize, cudaEventRecord, cudaMemset, cudaMalloc, cudaEventElapsedTime, cudaGetDeviceProperties, cudaEventCreate
 
 ## Dependencies needed to build/run
-[CDP](../../../README.md#cdp)
+[CDP](../../../README.md#cuda-dynamic-parallellism)
 
 ## Prerequisites
 

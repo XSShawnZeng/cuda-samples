@@ -26,7 +26,7 @@ x86_64, aarch64
 cudaHostAlloc, cudaMemPrefetchAsync, cudaFree, cudaLaunchCooperativeKernel, cudaMallocManaged, cudaSetDevice, cudaGetDeviceCount, cudaGetDeviceProperties, cudaFreeHost, cudaMemset, cudaStreamCreate, cudaStreamSynchronize, cudaDeviceEnablePeerAccess, cudaMemAdvise, cudaOccupancyMaxActiveBlocksPerMultiprocessor, cudaDeviceCanAccessPeer
 
 ## Dependencies needed to build/run
-[UVM](../../../README.md#uvm), [MDCG](../../../README.md#mdcg), [CPP11](../../../README.md#cpp11)
+[UVM](../../../README.md#unified-virtual-memory), [MDCG](../../../README.md#multi-device-cooperative-groups), [C++11 CUDA](../../../README.md#c11-cuda)
 
 ## Prerequisites
 

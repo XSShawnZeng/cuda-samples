@@ -26,7 +26,7 @@ x86_64, aarch64
 cudaMemcpy, cudaFree, cudaGetErrorString, cudaGetLastError, cudaEventSynchronize, cudaFuncSetAttribute, cudaEventRecord, cudaMemset, cudaMalloc, cudaEventElapsedTime, cudaGetDeviceProperties, cudaEventCreate
 
 ## Dependencies needed to build/run
-[CPP11](../../../README.md#cpp11)
+[C++11 CUDA](../../../README.md#c11-cuda)
 
 ## Prerequisites
 

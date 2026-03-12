@@ -26,7 +26,7 @@ x86_64, armv7l, aarch64
 cudaStreamCreateWithFlags, cudaFree, cudaDeviceGetAttribute, cudaMallocHost, cudaFreeHost, cudaStreamSynchronize, cudaLaunchCooperativeKernel, cudaMalloc, cudaOccupancyMaxActiveBlocksPerMultiprocessor, cudaMemcpyAsync, cudaOccupancyMaxPotentialBlockSize
 
 ## Dependencies needed to build/run
-[CPP11](../../../README.md#cpp11), [MBCG](../../../README.md#mbcg)
+[C++11 CUDA](../../../README.md#c11-cuda), [MBCG](../../../README.md#multi-block-cooperative-groups)
 
 ## Prerequisites
 

@@ -26,7 +26,7 @@ x86_64, aarch64
 cudaFree, cudaMallocManaged, cudaDeviceSynchronize, cudaEventRecord, cudaLaunchCooperativeKernel, cudaEventDestroy, cudaEventElapsedTime, cudaOccupancyMaxActiveBlocksPerMultiprocessor, cudaGetDeviceProperties, cudaEventCreate
 
 ## Dependencies needed to build/run
-[UVM](../../../README.md#uvm), [MBCG](../../../README.md#mbcg)
+[UVM](../../../README.md#unified-virtual-memory), [MBCG](../../../README.md#multi-block-cooperative-groups)
 
 ## Prerequisites
 

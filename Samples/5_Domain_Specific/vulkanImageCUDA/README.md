@@ -26,7 +26,7 @@ x86_64, aarch64
 cudaVkSemaphoreSignal, cudaWaitExternalSemaphoresAsync, cudaMemcpy, cudaVkImportSemaphore, cudaImportExternalSemaphore, cudaGetMipmappedArrayLevel, cudaSetDevice, cudaDestroySurfaceObject, cudaExtent, cudaMallocMipmappedArray, cudaCreateSurfaceObject, cudaStreamCreate, cudaSignalExternalSemaphoresAsync, cudaUpdateVkImage, cudaCreateTextureObject, cudaGetDeviceCount, cudaExternalMemoryGetMappedMipmappedArray, cudaDestroyTextureObject, cudaVkImportImageMem, cudaDestroyExternalMemory, cudaVkSemaphoreWait, cudaImportExternalMemory, cudaDestroyExternalSemaphore, cudaFreeMipmappedArray, cudaFree, cudaMalloc, cudaGetDeviceProperties
 
 ## Dependencies needed to build/run
-[X11](../../../README.md#x11), [VULKAN](../../../README.md#vulkan)
+[X11](../../../README.md#x11), [VULKAN](../../../README.md#vulkan), [GLFW](../../../README.md#glfw)
 
 ## Prerequisites
 

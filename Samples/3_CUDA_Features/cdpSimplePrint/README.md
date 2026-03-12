@@ -24,7 +24,7 @@ x86_64, armv7l
 cudaDeviceSynchronize, cudaGetLastError, cudaGetDeviceProperties, cudaDeviceSetLimit
 
 ## Dependencies needed to build/run
-[CDP](../../../README.md#cdp)
+[CDP](../../../README.md#cuda-dynamic-parallellism)
 
 ## Prerequisites
 

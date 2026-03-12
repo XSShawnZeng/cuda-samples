@@ -26,7 +26,7 @@ x86_64, armv7l
 cudaMemcpy, cudaFree, cudaSetDevice, cudaDeviceSynchronize, cudaGetDevice, cudaMalloc, cudaGetDeviceProperties
 
 ## Dependencies needed to build/run
-[CPP11](../../../README.md#cpp11)
+[C++11 CUDA](../../../README.md#c11-cuda)
 
 ## Prerequisites
 

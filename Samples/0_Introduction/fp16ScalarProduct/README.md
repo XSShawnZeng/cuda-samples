@@ -26,7 +26,7 @@ x86_64, armv7l
 cudaMemcpy, cudaFree, cudaMallocHost, cudaFreeHost, cudaMalloc, cudaGetDeviceProperties
 
 ## Dependencies needed to build/run
-[FP16](../../../README.md#fp16)
+[FP16](../../../README.md#16-bit-floating-point)
 
 ## Prerequisites
 

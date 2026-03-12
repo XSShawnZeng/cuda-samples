@@ -26,7 +26,7 @@ x86_64, armv7l, aarch64
 cuDeviceCanAccessPeer, cuMemImportFromShareableHandle, cuModuleLoadDataEx, cuModuleGetFunction, cuMemSetAccess, cuModuleLoad, cuStreamCreate, cuMemRelease, cuInit, cuLaunchKernel, cuMemcpyDtoHAsync, cuMemCreate, cuDeviceGet, cuCtxDestroy, cuDeviceGetCount, cuMemMap, cuMemExportToShareableHandle, cuStreamSynchronize, cuCtxEnablePeerAccess, cuDeviceGetAttribute, cuOccupancyMaxActiveBlocksPerMultiprocessor, cuCtxSetCurrent, cuMemGetAllocationGranularity, cuMemAddressFree, cuMemUnmap, cuCtxCreate, cuStreamDestroy, cuMemAddressReserve
 
 ## Dependencies needed to build/run
-[IPC](../../../README.md#ipc)
+[IPC](../../../README.md#cuda-interprocess-communication)
 
 ## Prerequisites
 

@@ -24,7 +24,7 @@ x86_64, armv7l
 cudaStreamDestroy, cudaFree, cudaMallocManaged, cudaStreamAttachMemAsync, cudaSetDevice, cudaDeviceSynchronize, cudaStreamSynchronize, cudaStreamCreate, cudaGetDeviceProperties
 
 ## Dependencies needed to build/run
-[OpenMP](../../../README.md#openmp), [UVM](../../../README.md#uvm), [CUBLAS](../../../README.md#cublas)
+[OpenMP](../../../README.md#openmp), [UVM](../../../README.md#unified-virtual-memory), [CUBLAS](../../../README.md#cublas)
 
 ## Prerequisites
 

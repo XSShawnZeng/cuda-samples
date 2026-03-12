@@ -26,7 +26,7 @@ x86_64, armv7l
 cudaGraphicsUnmapResources, cudaMemcpy, cudaFree, cudaGraphicsResourceGetMappedPointer, cudaGraphicsMapResources, cudaDeviceSynchronize, cudaMemset, cudaMemcpyToSymbol, cudaGraphicsGLRegisterBuffer, cudaGraphicsUnregisterResource, cudaMalloc, cudaInit, cudaGLInit
 
 ## Dependencies needed to build/run
-[X11](../../../README.md#x11), [GL](../../../README.md#gl)
+[X11](../../../README.md#x11), [OpenGL](../../../README.md#opengl), [Freeglut](../../../README.md#freeglut), [GLEW](../../../README.md#glew)
 
 ## Prerequisites
 
